@@ -169,7 +169,8 @@ class HttpKernel
             $shopwareVersion = InstalledVersions::getVersion('shopware/platform')
                 . '@' . InstalledVersions::getReference('shopware/platform');
         } else {
-            $shopwareVersion = InstalledVersions::getVersion('shopware/core')
+            $versions = explode(' || ', InstalledVersions::getVersionRanges('shopware/core'));
+            $shopwareVersion = end($versions)
                 . '@' . InstalledVersions::getReference('shopware/core');
         }
 
