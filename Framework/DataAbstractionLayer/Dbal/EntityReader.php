@@ -1021,7 +1021,7 @@ class EntityReader implements EntityReaderInterface
         foreach ($criteria->getAssociations() as $fieldName => $_fieldCriteria) {
             $field = $definition->getFields()->get($fieldName);
             if (!$field) {
-                $this->logger->warning(
+                $this->logger->debug(
                     sprintf('Criteria association "%s" could not be resolved. Double check your Criteria!', $fieldName)
                 );
 
