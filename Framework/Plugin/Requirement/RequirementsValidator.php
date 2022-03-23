@@ -159,10 +159,12 @@ class RequirementsValidator
                 continue;
             }
 
+            $version = $package->getExtra()['branch-alias'][$package->getVersion()] ?? $package->getVersion();
+
             $pluginDependencies['require'] = $this->checkRequirement(
                 $pluginDependencies['require'],
                 $package->getName(),
-                new Constraint('==', $package->getVersion()),
+                new Constraint('==', $version),
                 $exceptionStack
             );
 
@@ -170,7 +172,7 @@ class RequirementsValidator
                 $pluginDependencies['conflict'],
                 $this->pluginComposer->getPackage()->getName(),
                 $package->getName(),
-                new Constraint('==', $package->getVersion()),
+                new Constraint('==', $version),
                 $exceptionStack
             );
 
