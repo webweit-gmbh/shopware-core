@@ -31,7 +31,7 @@
         "branch-alias": {
             "dev-master": "6.4.x-dev",
             "dev-trunk": "6.4.x-dev",
-            "dev-6.4.9.0-webweit-patch": "6.4.9.0"
+            "dev-6.4.10.0-webweit-patch": "6.4.10.0"
         }
     },
     "require": {
